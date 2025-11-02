@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rửa Xe Anh Hào</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px; /* Khoảng cách giữa hình và văn bản */
+        }
+        header img {
+            width: 80px; /* Điều chỉnh kích thước hình nếu cần */
+            height: auto;
+            border-radius: 8px; /* Bo góc nhẹ cho hình */
+        }
+        .banner {
+            text-align: center;
+            padding: 20px;
+            background-color: #e9ecef;
+            margin-bottom: 20px;
+        }
+        .banner img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .product {
+            border: 2px solid #007BFF;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .product img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .product h3 {
+            color: #007BFF;
+        }
+        .product p {
+            margin: 10px 0;
+        }
+        button {
+            padding: 12px 24px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #dc3545;
+        }
+        footer {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 20px; /* Tăng padding để chứa thêm thông tin */
+            margin-top: 40px;
+        }
+        footer p {
+            margin: 5px 0; /* Khoảng cách giữa các dòng */
+        }
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover {
+            color: black;
+        }
+        .qr-code img {
+            width: 200px;
+            height: 200px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Hình ảnh logo được chèn vào đây (từ Google Drive hoặc Postimg nếu cần) -->
+        <img src="https://drive.google.com/uc?export=view&id=1i0T1amFpwPRkAvJSS41bAhboQHDVtlpQ" alt="Logo Rửa Xe Anh Hào">
+        <!-- Nếu không hiện, thay bằng: <img src="https://i.postimg.cc/RFfMD5vM/573548190-122173093676458797-4438993936480572738-n.jpg" alt="Logo Rửa Xe Anh Hào"> -->
+        Rửa Xe Anh Hào - Dịch Vụ Rửa Xe Chuyên Nghiệp
+    </header>
+    
+    <!-- Khoảng trống để chèn hình ảnh -->
+    <div class="banner">
+        <!-- Thay thế src bằng đường dẫn hình ảnh thực tế nếu có -->
+        <img src="https://via.placeholder.com/800x400?text=Ch%C3%A8n+H%C3%ACnh+Qu%E1%BA%A3ng+C%C3%A1o+%C4%90%C3%A2y" alt="Hình quảng cáo dịch vụ rửa xe">
+        
+        <!-- Nội dung quảng cáo được thêm vào -->
+        <div style="font-size: 18px; line-height: 1.6;">
+            <p><strong>ANH EM TÀI XẾ GHÉ NGHỈ CHÂN – RỬA XE SẠCH, TẶNG CHÂM NƯỚC, XỊT KÍNH MIỄN PHÍ 💦</strong></p>
+            <p>Chào anh em tài xế!!!<br>
+            RỬA XE ANH HÀO mới mở tiệm rửa xe nhỏ tại: quán cơm 68, gần trạm thu phí số 1 dt741, ấp Bố Lá, Xã Phước Hoà, Phú Giáo, Bình Dương.<br>
+            Tiệm tuy mới, nhưng Hào làm kỹ – sạch – nhiệt tình, mong được anh em ghé ủng hộ cho có việc làm mỗi ngày 💪😊</p>
+            
+            <p><strong>💦 DỊCH VỤ HIỆN CÓ:</strong><br>
+            ✅ Rửa/ Tẩy xe tải, xe đầu kéo, xe container, xe con, xe máy...<br>
+            ✅ Châm nước xịt kính và quét dưỡng lốp miễn phí cho anh em xe tải đường dài<br>
+            ✅ Có nước uống mát lạnh, có võng nghỉ thoải mái</p>
+            
+            <p>☕️ Bên cạnh tiệm còn có café võng và quán cơm, anh em có thể vừa rửa xe, vừa nghỉ chân – ăn uống tiện một vòng cho khỏe người 🥰</p>
+        </div>
+    </div>
+    
+    <div class="container">
+        <p style="text-align: center; font-size: 18px; margin-bottom: 20px;">Chọn sản phẩm yêu thích và mua ngay với giá tốt nhất!</p>
+        
+        <div class="products">
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Nước rửa xe cao cấp">
+                <h3>Nước Rửa Xe Cao Cấp</h3>
+                <p>Mô tả: Loại bỏ bụi bẩn và dầu mỡ hiệu quả. Dung tích 5L.</p>
+                <p>Giá: 150,000 VND</p>
+                <button onclick="buyProduct('Nước Rửa Xe Cao Cấp', 150000)">Mua Ngay</button>
+            </div>
+            
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Nước rửa xe sinh thái">
+                <h3>Nước Rửa Xe Sinh Thái</h3>
+                <p>Mô tả: An toàn cho môi trường, không chứa hóa chất độc hại. Dung tích 3L.</p>
+                <p>Giá: 120,000 VND</p>
+                <button onclick="buyProduct('Nước Rửa Xe Sinh Thái', 120000)">Mua Ngay</button>
+            </div>
+            
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Nước rửa xe siêu bọt">
+                <h3>Nước Rửa Xe Siêu Bọt</h3>
+                <p>Mô tả: Tạo bọt nhiều, dễ rửa và tiết kiệm nước. Dung tích 4L.</p>
+                <p>Giá: 100,000 VND</p>
+                <button onclick="buyProduct('Nước Rửa Xe Siêu Bọt', 100000)">Mua Ngay</button>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2023 Rửa Xe Anh Hào. Liên hệ: info@anhhao.vn</p>
+        <!-- Địa chỉ và liên hệ được thêm vào đây -->
+        <p><strong>📍 Địa chỉ:</strong> Quán cơm 68, gần trạm thu phí số 1 dt741, ấp Bố Lá, Xã Phước Hoà, Phú Giáo, Bình Dương</p>
+        <p><strong>📞 Liên hệ:</strong> 0355467495</p>
+       <p> RỬA XE ANH HÀO xin được phục vụ tận tình ❤️</p>
+            
+            <p>👉 Ai ở gần khu này, chia sẻ giúp RỬA XE ANH HÀO để nhiều anh em tài biết chỗ ghé nha.<br>
+            Cảm ơn anh em ❤️</p>
+    </footer>
+    
+    <!-- Modal for Payment -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Trang Thanh Toán</h2>
+            <p id="product-info">Đang tải...</p>
+            <p id="total-price">Tổng tiền: Đang tải...</p>
+            <div class="qr-code">
+                <p>Quét mã QR để thanh toán (giả lập):</p>
+                <img src="https://i.postimg.cc/zfhZJC6n/QRPay-2.jpg" alt="QR Code Thanh Toán">
+            </div>
+            <button onclick="confirmPayment()">Xác Nhận Thanh Toán</button>
+        </div>
+    </div>
+    
+    <script>
+        function buyProduct(productName, price) {
+            // Hiển thị modal với thông tin sản phẩm
+            document.getElementById('product-info').textContent = `Sản phẩm: ${productName}`;
+            document.getElementById('total-price').textContent = `Tổng tiền: ${parseInt(price).toLocaleString()} VND`;
+            document.getElementById('paymentModal').style.display = 'block';
+        }
+        
+        function closeModal() {
+            document.getElementById('paymentModal').style.display = 'none';
+        }
+        
+        function confirmPayment() {
+            alert('Thanh toán thành công! Cảm ơn bạn đã mua hàng. (Đây là giả lập.)');
+            closeModal();
+        }
+        
+        // Đóng modal khi click ngoài
+        window.onclick = function(event) {
+            const modal = document.getElementById('paymentModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
